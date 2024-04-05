@@ -20,6 +20,7 @@ public class Slayer extends Robot
 		// setColors(Color.red,Color.blue,Color.green); // body,gun,radar
 
 		// Robot main loop
+		//Dummy comment
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
 			ahead(100);
