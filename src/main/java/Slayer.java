@@ -24,7 +24,7 @@ public class Slayer extends Robot
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
 			ahead(100);
-			scan()
+			scan();
 			back(100);
 			turnGunRight(360);
 		}
