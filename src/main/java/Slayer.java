@@ -1,5 +1,5 @@
 import robocode.*;
-//import java.awt.Color;
+import java.awt.Color;
 
 // API help : https://robocode.sourceforge.io/docs/robocode/robocode/Robot.html
 
@@ -17,14 +17,14 @@ public class Slayer extends Robot
 		// After trying out your robot, try uncommenting the import at the top,
 		// and the next line:
 
-		// setColors(Color.red,Color.blue,Color.green); // body,gun,radar
+		setColors(Color.blue,Color.blue,Color.green); // body,gun,radar
 
 		// Robot main loop
 		//Dummy comment
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
 			ahead(100);
-			turnGunRight(360);
+			scan()
 			back(100);
 			turnGunRight(360);
 		}
@@ -51,6 +51,7 @@ public class Slayer extends Robot
 	 */
 	public void onHitWall(HitWallEvent e) {
 		// Replace the next line with any behavior you would like
-		back(20);
+		back(10);
+		turnGunRight(180);
 	}	
 }
