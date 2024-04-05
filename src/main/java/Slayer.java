@@ -27,13 +27,12 @@ public class Slayer extends Robot
 		// Robot main loop
 		//Dummy comment
 		while(true) {
-			// Replace the next 4 lines with any behavior you would like
-            // Move forward
-            ahead(100);
+           setAhead(200);
             // Turn the radar
-            turnRadarRight(360);
+            setTurnRadarRight(360);
             // Turn right
-            turnRight(90);
+            setTurnRight(90);
+            execute();
 		}
 	}
 
@@ -41,23 +40,23 @@ public class Slayer extends Robot
 	 * onScannedRobot: What to do when you see another robot
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
-		// Replace the next line with any behavior you would like
-		fire(1);
+       // Calculate firepower based on distance
+        double firePower = Math.min(3.0, getEnergy() / 4);
+        // Turn gun towards the enemy
+        setTurnGunRight(getHeading() - getGunHeading() + e.getBearing());
+        // Fire!
+        fire(firePower);
 	}
 
-	/**
-	 * onHitByBullet: What to do when you're hit by a bullet
-	 */
-	public void onHitByBullet(HitByBulletEvent e) {
-		// Replace the next line with any behavior you would like
-		back(10);
-	}
-	
-	/**
-	 * onHitWall: What to do when you hit a wall
-	 */
-	public void onHitWall(HitWallEvent e) {
-		// Replace the next line with any behavior you would like
-		back(100);
-	}	
+    public void onHitByBullet(HitByBulletEvent e) {
+        // When hit by a bullet, turn randomly to evade future shots
+        setTurnRight(45 + Math.random() * 90);
+        setAhead(100);
+    }
+
+    public void onHitWall(HitWallEvent e) {
+        // If we hit a wall, reverse and turn to avoid getting stuck
+        setBack(100);
+        setTurnRight(90);
+    }	
 }
