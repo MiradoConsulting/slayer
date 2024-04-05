@@ -17,16 +17,23 @@ public class Slayer extends Robot
 		// After trying out your robot, try uncommenting the import at the top,
 		// and the next line:
 
-		setColors(Color.blue,Color.blue,Color.green); // body,gun,radar
+       // Set robot colors
+        setBodyColor(java.awt.Color.blue);
+        setGunColor(java.awt.Color.blue);
+        setRadarColor(java.awt.Color.blue);
+        setScanColor(java.awt.Color.blue);
+        setBulletColor(java.awt.Color.blue);
 
 		// Robot main loop
 		//Dummy comment
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
-			ahead(100);
-			scan();
-			back(100);
-			turnGunRight(360);
+            // Move forward
+            ahead(100);
+            // Turn the radar
+            turnRadarRight(360);
+            // Turn right
+            turnRight(90);
 		}
 	}
 
