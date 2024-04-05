@@ -51,7 +51,6 @@ public class Slayer extends Robot
 	 */
 	public void onHitWall(HitWallEvent e) {
 		// Replace the next line with any behavior you would like
-		back(10);
-		turnGunRight(180);
+		back(100);
 	}	
 }
