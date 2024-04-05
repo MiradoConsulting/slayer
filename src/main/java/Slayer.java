@@ -32,7 +32,6 @@ public class Slayer extends Robot
             setTurnRadarRight(360);
             // Turn right
             setTurnRight(90);
-            execute();
 		}
 	}
 
